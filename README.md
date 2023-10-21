@@ -1,8 +1,6 @@
 
 
-# Título do Projeto
-
-API de Gerenciamento de Escola/Curso
+# API de Gerenciamento de Escola/Curso
 
 ## Descrição do Projeto
 
@@ -48,25 +46,25 @@ Agradecemos à comunidade de desenvolvedores e aos contribuidores por seu apoio 
 ```mermaid
 classDiagram
 class Estudante {
-+ id: Integer
-+ nome: String
-+ sobrenome: String
-+ email: String
-+ dataNascimento: LocalDate
+- id: Integer
+- nome: String
+- sobrenome: String
+- email: String
+- dataNascimento: LocalDate
 }
-    class Professor {
-        + matricula: Integer
-        + nomecompleto: String
-        + especializacao: String
-        + telefone: String
-    }
+class Professor {
+- matricula: Integer
+- nomecompleto: String
+- especializacao: String
+- telefone: String
+}
 
-    class Turma {
-        + sala: String
-        + turno: String
-        + curso: String
-    }
+class Turma {
+- sala: String
+- turno: String
+- curso: String
+}
 
-    Estudante "1" -- "*" Turma : Está matriculado em
+    Estudante "1" -- "1" Turma : Está matriculado em
     Professor "1" -- "*" Turma : Ministra aula em
 ```
