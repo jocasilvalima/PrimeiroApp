@@ -15,6 +15,5 @@ Estudante é o tipo de dado que vai ser salvo
 Integer é o tipo da chave primaria
 */
 public interface EstudanteRepository extends JpaRepository<Estudante, Integer> {
-
-
+    void deleteAllById(Integer id);
 }

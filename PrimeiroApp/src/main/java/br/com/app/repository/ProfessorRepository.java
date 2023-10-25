@@ -16,4 +16,5 @@ Integer é o tipo da chave primaria
 */
 public interface ProfessorRepository extends JpaRepository<Professor, Integer> {
 
+    void deleteAllById(Integer matricula);
 }

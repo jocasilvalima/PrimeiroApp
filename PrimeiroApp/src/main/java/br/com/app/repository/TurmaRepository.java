@@ -16,4 +16,5 @@ String é o tipo da chave primaria
 */
 public interface TurmaRepository extends JpaRepository<Turma, String> {
 
+    void deleteAllById(String sala);
 }
