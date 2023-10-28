@@ -41,7 +41,7 @@ public class TurmaService {
     public Turma updateTurma(String sala, Turma turma){
         Turma turmaBD = turmaRepo.findById(sala).orElse(null);
         if(turmaBD != null){
-            turmaBD.setSala(turma.getSala());
+            turmaBD.setNome(turma.getNome());
             turmaBD.setTurno(turma.getTurno());
             turmaBD.setCurso(turma.getCurso());
             return turmaRepo.save(turmaBD);

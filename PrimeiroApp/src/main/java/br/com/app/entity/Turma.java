@@ -18,7 +18,7 @@ public class Turma {
     @Id
 
     //atributos da classe turma
-    private String sala;
+    private String nome;
     private String turno;
     private String curso;
 
