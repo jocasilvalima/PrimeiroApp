@@ -32,7 +32,7 @@ public class TurmaService {
     public Boolean deletarTurmaPorSala(String sala){
         Turma turma = turmaRepo.findById(sala).orElse(null);
         if(turma != null){
-            turmaRepo.deleteAllById(sala);
+            turmaRepo.deleteById(sala);
             return true;
         }
         return false;

@@ -34,7 +34,7 @@ public class ProfessorService {
     public Boolean deletarProfessor(Integer matricula){//método para deletar um professor pela matricula
         Professor professor = professorRepo.findById(matricula).orElse(null);// Encontra o Professor pelo matricula se não existir retorna null
         if(professor != null){//se o professor existir faz o delete
-            professorRepo.deleteAllById(matricula);// Deleta o Professor pela matricula
+            professorRepo.deleteById(matricula);// Deleta o Professor pela matricula
             return true;//retorna true se o professor for deletado
         }
         return false;//retorna false se o professor não for deletado
@@ -43,7 +43,7 @@ public class ProfessorService {
     public Professor updateProfessor(Integer matricula, Professor professor){//método para atualizar um professor
         Professor professorBD = professorRepo.findById(matricula).orElse(null);// Recupera um professor do repositório com base no ID fornecido. Se nenhum professor for encontrado, retorna null.
         if(professorBD != null){// Se o professor for encontrado, atualize as informações do professor
-            professorBD.setNomecompleto(professor.getNomecompleto());// Atualiza o nome completo do professor com o nome fornecido no objeto "professor".
+            professorBD.setNome(professor.getNome());// Atualiza o nome completo do professor com o nome fornecido no objeto "professor".
             professorBD.setEspecializacao(professor.getEspecializacao());// Atualiza o especialização do professor com o sobrenome fornecido no objeto "professor".
             professorBD.setTelefone(professor.getTelefone());// Atualiza o telefone do professor com o email fornecido no objeto "professor".
             return professorRepo.save(professorBD); // Salva a entidade Professor atualizada

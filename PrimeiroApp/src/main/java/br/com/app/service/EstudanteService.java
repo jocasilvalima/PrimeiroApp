@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service; // Importa a anotação Service d
 
 import java.util.List;
 
-@Service // A anotação @Service indica que esta classe é um serviço gerenciado pelo Spring Framework.
-public class EstudanteService {
+   @Service // A anotação @Service indica que esta classe é um serviço gerenciado pelo Spring Framework.
+   public class EstudanteService {
 
     @Autowired // A anotação @Autowired é usada para injetar automaticamente o bean EstudanteRepository neste campo.
     private EstudanteRepository estudanteRepo; // Campo autowired para o repositório EstudanteRepository
@@ -31,10 +31,10 @@ public class EstudanteService {
     }
 
     // Método para deletar um Estudante pelo ID
-    public Boolean deletarEstudantePorId(Integer id){
+    public Boolean deletarEstudante(Integer id){
         Estudante estudante = estudanteRepo.findById(id).orElse(null); // Encontra o Estudante pelo ID
         if(estudante != null){
-            estudanteRepo.deleteAllById(id); // Deleta o Estudante pelo ID
+            estudanteRepo.deleteById(id); // Deleta o Estudante pelo ID
             return true;
         }
         return false;

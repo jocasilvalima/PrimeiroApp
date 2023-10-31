@@ -23,7 +23,7 @@ public class Professor {
 
     //atributos da classe professor
     private Integer matricula;
-    private String nomecompleto;
+    private String nome;
     private String especializacao;
     private String telefone;
 
