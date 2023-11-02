@@ -17,41 +17,41 @@ public class TurmaService {
     private TurmaRepository turmaRepo;
 
 
-    public Turma salvar(Turma turma){
+    public Turma salvar(Turma turma) {
         return turmaRepo.save(turma);
     }
 
-    public List<Turma> buscarTodasTurmas(){
+    public List<Turma> buscarTodasTurmas() {
         return turmaRepo.findAll();
     }
 
-    public Turma buscarTurmaPorSala(String sala){
+    public Turma buscarTurmaPorNumero(String sala) {
         return turmaRepo.findById(sala).orElse(null);
     }
 
-    public Boolean deletarTurmaPorSala(String sala){
+    public Boolean deletarTurmaPorNumero(String sala) {
         Turma turma = turmaRepo.findById(sala).orElse(null);
-        if(turma != null){
+        if (turma != null) {
             turmaRepo.deleteById(sala);
             return true;
         }
         return false;
     }
 
-    public Turma updateTurma(String sala, Turma turma){
+    public Turma updateTurma(String sala, Turma turma) {
         Turma turmaBD = turmaRepo.findById(sala).orElse(null);
-        if(turmaBD != null){
+        if (turmaBD != null) {
             turmaBD.setNome(turma.getNome());
             turmaBD.setTurno(turma.getTurno());
             turmaBD.setCurso(turma.getCurso());
             return turmaRepo.save(turmaBD);
-        } else{
+        } else {
             return null;
         }
     }
 
-    public Page<Turma> buscarTurmasPorPaginacao(PageRequest page){
+    public Page<Turma> buscarTurmaPorPaginacao( PageRequest page) {
         return turmaRepo.findAll(page);
-    }
 
+    }
 }

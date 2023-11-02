@@ -26,7 +26,7 @@ import java.util.List;
         return estudanteRepo.findAll(); // Encontra e retorna todos os Estudantes usando o repositório
     }
 
-    public Estudante buscarEstudantePorId(Integer id){//método para buscar um estudante pelo id
+    public Estudante buscarEstudantePeloId(Integer id){//método para buscar um estudante pelo id
         return estudanteRepo.findById(id).orElse(null);// Encontra e retorna o Estudante usando o repositório
     }
 

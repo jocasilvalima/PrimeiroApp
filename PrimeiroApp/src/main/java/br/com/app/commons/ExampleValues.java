@@ -3,6 +3,7 @@ package br.com.app.commons;
 public class ExampleValues {
     public static final String ID_ESTUDANTE = "1";
     public static final String MATRICULA_PROFESSOR = "1";
+    public static final String NUMERO_TURMA = "1";
     public static final String PAGINA = "0";
     public static final String ITENS_POR_PAGINA = "1";
     public static final String ORDENACAO = "nome";
