@@ -65,6 +65,6 @@ class Turma {
 - curso: String
 }
 
-    Estudante "1" -- "1" Turma : Está matriculado em
+    Estudante "*" -- "1" Turma : Está matriculado em
     Professor "1" -- "*" Turma : Ministra aula em
 ```
